@@ -1,13 +1,14 @@
 import { test, expect } from '@playwright/test';
+import { obj as data } from '../fixture/data/login_data.js'
 
 test('test', async ({ page }) => {
   await page.goto('http://playwright.dev/');
   await page.goto('https://ktaxa-qa.mac-non-prod.appmanteam.com/apps/case-keeper/v1/dashboard');
   await page.locator('#kc-form-login div').filter({ hasText: 'Username or email' }).click();
   await page.getByLabel('Username or email').click();
-  await page.getByLabel('Username or email').fill('client_admin_1@ktaxa.com');
+  await page.getByLabel('Username or email').fill(data.username);
   await page.getByLabel('Password').click();
-  await page.getByLabel('Password').fill('!QAZ2wsx');
+  await page.getByLabel('Password').fill(data.password);
   await page.getByRole('button', { name: 'Log In' }).click();
   await page.getByRole('button', { name: 'Create Link' }).click();
   await page.locator('.select').selectOption('normal');
