@@ -43,11 +43,11 @@ export const inputCreateCaseForm = async (page, idCardNumber, name, lastname, da
     await clickAndInput(idCardSelector, idCardNumber)
     await selectTitle.click();
     await page.locator('#react-select-3-option-4').click();
-    await clickAndInput(inputFristName, name)
-    await clickAndInput(inputLasttName, lastname)
+    await inputFristName.fill(name);
+    await inputLasttName.fill(lastname);
     await selectDate.fill(dateofbrith);
     await page.locator('div:nth-child(9) > div > .grid > div').first().click();
-    await clickAndInput(phone, phoneNumber)
+    await phone.fill(phoneNumber);
     await page.locator('form').getByRole('button', { name: 'send' }).click();
     await page.getByRole('button', { name: 'confirm' }).click();
     await page.locator('xpath= //*[@id="root"]/div[3]/div/div[4]/div[1]/table/tbody/tr/td[10]/div/input[1]').click();
