@@ -4,25 +4,18 @@ import { clickAndInput } from '../utils'
 export const getByPlaceholder = (page) => {
     return page.getByPlaceholder('x-xxxx-xxxxx-xxx')
 }
-
 export const locator = (page) => {
     return page.locator('div:nth-child(5) > .grid > div:nth-child(2) > .css-b62m3t-container > .reselect__control > .reselect__value-container > .reselect__input-container')
 }
-
-
 export const locatorFristName = (page) => {
     return page.locator('input[name="proprietor\\.insureds\\.fields\\.0\\.firstName"]')
 }
-
 export const locatorLastName = (page) => {
     return page.locator('input[name="proprietor\\.insureds\\.fields\\.0\\.lastName"]')
 }
-
-
 export const currentDate = (page) => {
     return page.getByPlaceholder('dd/mm/yyyy')
 }
-
 export const getPhoneNumber = (page) => {
     return page.locator('input[name="proprietor\\.insureds\\.fields\\.0\\.phoneNumber"]')
 }
