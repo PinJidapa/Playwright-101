@@ -1,4 +1,4 @@
-import { getFirstOption, getSecondtOption } from "./login-page"
+import { getFirstOption, getSecondtOption } from "./loginPage"
 import { clickAndInput } from '../utils'
 
 export const getByPlaceholder = (page) => {
