@@ -1,18 +1,25 @@
 import { test, expect } from '@playwright/test';
-import { obj as data } from '../fixture/data/login_data.js'
+import { obj as data } from '../fixture/data/login_data'
+import { getUsername } from '../pages/login-page'
+import { getFirstOption } from '../pages/login-page'
 
-test('test', async ({ page }) => {
+test('creat case flow', async ({ page }) => {
+  const loginBtn = await page.getByRole('button', { name: 'Log In' });
   await page.goto('http://playwright.dev/');
   await page.goto('https://ktaxa-qa.mac-non-prod.appmanteam.com/apps/case-keeper/v1/dashboard');
-  await page.locator('#kc-form-login div').filter({ hasText: 'Username or email' }).click();
-  await page.getByLabel('Username or email').click();
-  await page.getByLabel('Username or email').fill(data.username);
+
+  const username = getUsername(page)
+  const firstLocator = getFirstOption(page)
+  await username.click();
+  await username.fill(data.username);
+  
   await page.getByLabel('Password').click();
   await page.getByLabel('Password').fill(data.password);
+  
   await page.getByRole('button', { name: 'Log In' }).click();
   await page.getByRole('button', { name: 'Create Link' }).click();
   await page.locator('.select').selectOption('normal');
-  await page.locator('xpath=//*[@id="root"]/div[3]/div/form/div[2]/div[3]/div/div/div/div/div/div[2]/div/div/div[1]/div[2]').click();
+  await firstLocator.click();
   await page.locator('xpath=//*[@id="react-select-2-option-0"]').click()
   await page.getByPlaceholder('x-xxxx-xxxxx-xxx').click();
   await page.getByPlaceholder('x-xxxx-xxxxx-xxx').fill('2-1003-00026-833_');
