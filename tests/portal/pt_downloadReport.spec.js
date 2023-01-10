@@ -12,10 +12,11 @@ test('cretaecaseflow-portal', async ({ page }) => {
   await username.fill(data.username);
   await page.getByLabel('Password').fill(data.password);
   await loginBtn.click();
-  const [download] = await Promise.all([
-    page.waitForEvent('download'),
-    page.getByRole('button', { name: 'Result Report' }).click()
-  ]);
-  await page.locator('label').filter({ hasText: 'c1' }).click();
+  await page.locator('.w-9').click();
+  const downloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Download Result Report' }).click();
+  const download = await downloadPromise;
+  await page.locator('.fixed > .w-12').click();
+  await page.locator('.flex > .p-2').click();
   await page.getByRole('button', { name: 'Log out' }).click();
 });
