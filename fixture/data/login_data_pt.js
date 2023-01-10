@@ -1,9 +1,10 @@
 export const data = {
+    webURL: 'https://portal-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases',
     username: 'native_core_2',
     password: '!QAZ2wsx',
-    id: '2-1003-00026-833',
-    name: 'ศุภธัช',
-    lastname: 'ทองกล่ำ',
-    dateofbrith: '19/02/1999',
-    phoneNumber: '0959309381'
+    id: '1-9098-01024-569',
+    name: 'ณธณัฎฐ์',
+    lastname: 'เจริญทรัพย์',
+    dateofbrith: '22/03/1996',
+    phoneNumber: '0800359595'
 }
