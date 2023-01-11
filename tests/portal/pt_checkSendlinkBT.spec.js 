@@ -6,7 +6,6 @@ import {
 } from '../../pages_pt'
 
 
-const downloadResultBtnSelector = '//*[@id="root"]/div/div/div[3]/div/div[2]/div/div[1]/div[2]/div[2]/div/button'
 const downloadSendlinkBtnSelector = '//*[@id="root"]/div/div/div[3]/div/div[2]/div/div[1]/div[2]/div[2]/div/ul/li[2]/button'
 test('cretaecaseflow-portal', async ({ page }) => {
   const loginBtn = page.getByRole('button', { name: 'Log In' });
