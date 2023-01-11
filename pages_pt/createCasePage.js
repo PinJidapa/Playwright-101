@@ -27,7 +27,7 @@ export const inputCreateCaseForm = async (page, idCardNumber, name, lastname, da
     const phone = getPhoneNumber(page)
     await page.getByRole('button', { name: 'Create Case' }).click();
     await page.locator('form div').filter({ hasText: 'Select Case' }).nth(2).click();
-    await page.locator('#react-select-2-option-3').click();
+    await page.locator('#react-select-2-option-5').click();
     await idCardSelector.fill(idCardNumber);
     await selectTitle.click();
     await page.locator('#react-select-3-option-4').click();
