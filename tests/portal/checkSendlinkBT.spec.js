@@ -23,6 +23,6 @@ test('cretaecaseflow-portal', async ({ page }) => {
   await page.getByRole('button', { name: 'confirm' }).click();
   const download = await downloadPromise;
 
-  expect(await page.locator(downloadSendlinkBtnSelector).getAttribute('class')).toMatch(/(disabled)/gm);
+  expect(await page.locator(downloadSendlinkBtnSelector).getAttribute('class')).not.toMatch(/(disabled)/gm);
 
 });

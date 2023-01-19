@@ -19,10 +19,6 @@ test('cretaecaseflow-portal', async ({ page }) => {
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download Result Report' }).click();
   const download = await downloadPromise;
-  //await page.locator('.fixed > .w-12').click();
-  //await page.locator('.flex > .p-2').click();
-  //await page.getByRole('button', { name: 'Log out' }).click();
-
   expect(await page.locator(downloadBtnSelector).getAttribute('class')).not.toMatch(/(disabled)/gm);
 
 });
