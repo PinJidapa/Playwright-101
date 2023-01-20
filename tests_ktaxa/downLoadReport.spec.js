@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('http://playwright.dev/');
   await page.goto('https://ktaxa-qa.mac-non-prod.appmanteam.com/apps/case-keeper/v1/dashboard');
   await page.getByLabel('Username or email').click();
   await page.getByLabel('Username or email').fill('client_admin_1@ktaxa.com');

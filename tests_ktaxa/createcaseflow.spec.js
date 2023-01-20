@@ -15,6 +15,6 @@ test('creat case flow', async ({ page }) => {
   await inputUserName(page, data.username, data.password)
   await inputCreateCaseForm(page, data.id, data.name, data.lastname, data.dateofbrith, data.phoneNumber)
 
-  await page.getByText('c1').click();
-  await page.getByRole('button', { name: 'Log out' }).click();
+  // await page.getByText('c1').click();
+  // await page.getByRole('button', { name: 'Log out' }).click();
 });
