@@ -19,7 +19,7 @@ test("test", async ({ page }) => {
   await page
     .locator('xpath=//*[@id="root"]/div/div/div[5]/div/form/div[1]/div/div')
     .click();
-  await page.locator("xpath=");
+  await page.locator("#react-select-2-option-2").click();
   await page.getByPlaceholder("x-xxxx-xxxxx-xxx").fill("2-1003-00026-833_");
   await page.getByRole("button", { name: "cancel" }).click();
 });

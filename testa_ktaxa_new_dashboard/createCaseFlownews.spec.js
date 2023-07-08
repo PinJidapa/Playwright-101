@@ -4,7 +4,7 @@ import { inputUserName, inputCreateCaseFormNews } from "../pages";
 
 test("test", async ({ page }) => {
   await page.goto(
-    "https://ktaxa-qa.mac-non-prod.appmanteam.com/apps/case-keeper/cases"
+    "https://portal-uat.mac-non-prod.appmanteam.com/apps/case-keeper/cases"
   );
   await inputUserName(page, data.username, data.password);
 
